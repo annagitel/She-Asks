@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "948273442842",
+    "firebase_url": "https://she-asks-f325c.firebaseio.com",
+    "project_id": "she-asks-f325c",
+    "storage_bucket": "she-asks-f325c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948273442842:android:6a3936789c93ea4a2821a3",
+        "android_client_info": {
+          "package_name": "com.example.sheasks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948273442842-rs5g1q2otj2bpn4abjtv1bvlg9vofnb9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB66R_FD1hz-j4oUseVQjyf4Dt2xv4cWZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948273442842-rs5g1q2otj2bpn4abjtv1bvlg9vofnb9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
