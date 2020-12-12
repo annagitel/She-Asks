@@ -25,4 +25,8 @@ public class MainActivity extends AppCompatActivity {
     public void addQuestionActivity(View view) {
         startActivity(new Intent(this, AddQuestionActivity.class));
     }
+
+    public void MainMenu(View view) {
+        startActivity(new Intent(this, MainMenu.class));
+    }
 }
