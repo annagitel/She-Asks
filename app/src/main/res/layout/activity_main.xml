@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:andriod="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/green">
+    android:background="@color/green_background"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/name"
@@ -30,7 +31,7 @@
             android:id="@+id/buttonMenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/green"
+            android:background="@color/green_background"
             android:contentDescription="@string/menu"
             android:onClick="MainMenu"
             android:src="@drawable/ic_menu">
@@ -139,15 +140,13 @@
 
     <Button
         android:id="@+id/ask"
-        android:layout_width="208dp"
-        android:layout_height="37dp"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/name"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-51dp"
-        android:gravity="center"
+        android:layout_marginBottom="-50dp"
         android:onClick="addQuestionActivity"
-        andriod:text="תשאלי שאלה!"
-        app:backgroundTint="#056809">
+        andriod:text="Ask a Question">
 
     </Button>
 
@@ -157,10 +156,9 @@
         android:layout_alignBottom="@+id/hotQuestions"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-70dp"
-        android:gravity="center"
-        andriod:onClick="SearchQuestionActivity"
-        andriod:text="חיפוש"
-        app:backgroundTint="#056809">
+        android:onClick="searchQuestionActivity"
+        andriod:text="@string/search"
+        >
 
 
     </Button>

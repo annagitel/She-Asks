@@ -3,4 +3,6 @@
     <string name="please_enter_question_text">Please enter question text</string>
     <string name="question">שאלה</string>
     <string name="menu">menu</string>
+    <string name="ask">Ask a question</string>
+    <string name="search">Search</string>
 </resources>
