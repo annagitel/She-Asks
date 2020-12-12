@@ -16,13 +16,13 @@
         <activity android:name=".WebCategory" />
         <activity android:name=".GitCategory" />
         <activity android:name=".JavaCategory" />
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LogIn" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
+
     </application>
 </manifest>

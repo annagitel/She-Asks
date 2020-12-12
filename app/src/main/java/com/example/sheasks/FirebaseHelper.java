@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -13,6 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class FirebaseHelper {
 
@@ -21,10 +23,9 @@ public class FirebaseHelper {
     protected User user;
 
     private static String u_email, u_pass;
-    private static HashMap<String, String> hm;
 
 
-    public void addUser(User user) { // adding a user to realtime database
+    public void addUser(FirebaseUser user) { // adding a user to realtime database
         mdatabase = FirebaseDatabase.getInstance();
         mRef = mdatabase.getReference("Users");
         mRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user);
@@ -32,7 +33,7 @@ public class FirebaseHelper {
 
     }
 
-    public void readUser(final OnGetDataListener getdata) {
+    public void readUser(final OnGetDataListener getdata){
 
 
         mdatabase = FirebaseDatabase.getInstance();
@@ -42,7 +43,8 @@ public class FirebaseHelper {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                user = dataSnapshot.child(FirebaseAuth.getInstance().getUid()).getValue(User.class);
+                user = dataSnapshot.child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid())).getValue(User.class);
+                System.out.println(user.getEmail());
                 getdata.onSuccess(user);
             }
 

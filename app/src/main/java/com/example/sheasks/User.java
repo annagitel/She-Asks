@@ -1,13 +1,18 @@
 package com.example.sheasks;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class User {
-    private   String Email , Password , Admin;
+    private   String Email , Password;
+    String Admin;
+    ArrayList<String> categories;
 
     public User(){}
+
 
     public User(String E, String P){
         this.Email=E;
@@ -24,7 +29,7 @@ public class User {
         return Password;
     }
 
-    public void setAdmin(String admin) {
+    public void setAdmin(String admin){
         Admin = admin;
     }
 
@@ -39,5 +44,15 @@ public class User {
     public void setPassword(String password) {
         Password = password;
     }
+
+    public void addCategory(String category){
+        categories.add(category);
+    }
+
+    public void removeCategory(String category){
+        categories.remove(category);
+    }
+
+
 
 }
