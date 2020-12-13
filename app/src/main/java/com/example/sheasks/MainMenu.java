@@ -34,7 +34,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void goToErrors(View view) {
-        startActivity(new Intent(this, Error.class));
+        startActivity(new Intent(this, AddErrorInAppActivity.class));
     }
 
 
