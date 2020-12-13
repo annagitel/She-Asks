@@ -20,7 +20,7 @@
         android:gravity="top"
         android:maxLines="15"
         android:minLines="15"
-        android:hint="תוכן דיווח תוכן דיווח תוכן דיווח"
+        android:hint="write your problem here"
         android:textSize="20sp" />
 
     <Button
@@ -28,5 +28,5 @@
         android:padding="20dp"
         android:onClick="sendError"
         android:layout_height="wrap_content"
-        android:text="שלחי דיווח" />
+        android:text="report" />
 </LinearLayout>

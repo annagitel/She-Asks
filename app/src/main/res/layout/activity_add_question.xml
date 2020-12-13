@@ -20,7 +20,7 @@
         android:gravity="top"
         android:maxLines="15"
         android:minLines="15"
-        android:hint="תוכן שאלה תוכן שאלה תוכן שאלה"
+        android:hint="write your question here"
         android:textSize="20sp" />
 
     <Button
@@ -28,5 +28,5 @@
         android:padding="20dp"
         android:onClick="sendQuestion"
         android:layout_height="wrap_content"
-        android:text="שלחי שאלה" />
+        android:text="send" />
 </LinearLayout>

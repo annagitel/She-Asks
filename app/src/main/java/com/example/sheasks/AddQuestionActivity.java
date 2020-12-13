@@ -29,7 +29,7 @@ public class AddQuestionActivity extends AppCompatActivity {
     }
 
     private void initSpinner() {
-        String[] items = new String[]{"Java", "C", "C++", "C#", "Angular", "Html"};
+        String[] items = new String[]{"Java", "Git", "Python", "Web"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         categorySpinner.setAdapter(adapter);
     }
