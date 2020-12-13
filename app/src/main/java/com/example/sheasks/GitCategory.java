@@ -17,4 +17,8 @@ public class GitCategory extends AppCompatActivity {
      public void addQuestionActivity(View view) {
         startActivity(new Intent(this, AddQuestionActivity.class));
     }
+
+    public void searchQuestionActivity(View view) {
+        startActivity(new Intent(this, SearchQuestionActivity.class));
+    }
 }

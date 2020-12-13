@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SheAsks">
+        <activity android:name=".Settings"></activity>
         <activity android:name=".SearchQuestionActivity" />
         <activity android:name=".AddErrorInAppActivity" />
         <activity android:name=".AddQuestionActivity" />
@@ -16,13 +17,15 @@
         <activity android:name=".WebCategory" />
         <activity android:name=".GitCategory" />
         <activity android:name=".JavaCategory" />
-        <activity android:name=".LogIn" >
+        <activity android:name=".MainMenu" />
+        <activity android:name=".LogIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-
+        <activity android:name=".MainActivity" />
     </application>
+
 </manifest>

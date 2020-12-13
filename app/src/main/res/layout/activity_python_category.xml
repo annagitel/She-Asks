@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/green_background"
-    tools:context=".MainActivity">
+    tools:context=".PythonCategory">
 
     <TextView
         android:id="@+id/name"
