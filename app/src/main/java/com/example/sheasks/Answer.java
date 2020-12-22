@@ -11,5 +11,15 @@ public class Answer {
         this.date = date;
     }
 
+    public String getAuthor() {
+        return author;
+    }
 
+    public String getData() {
+        return data;
+    }
+
+    public String getDate() {
+        return date;
+    }
 }

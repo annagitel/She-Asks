@@ -40,4 +40,20 @@ public class Error {
     public void setDate(long date) {
         this.date = date;
     }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getIsResolved() {
+        return isResolved;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setIsResolved(String isResolved) {
+        this.isResolved = isResolved;
+    }
 }

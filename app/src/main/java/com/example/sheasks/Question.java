@@ -54,4 +54,32 @@ public class Question {
     public void setDate(long date) {
         this.Date = date;
     }
+
+    public String getIsResolved() {
+        return isResolved;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public ArrayList<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setIsResolved(String isResolved) {
+        this.isResolved = isResolved;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setAnswers(ArrayList<Answer> answers) {
+        this.answers = answers;
+    }
+
+    public void addAnswer(Answer ans){
+        this.answers.add(ans);
+    }
 }

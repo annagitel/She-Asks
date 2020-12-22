@@ -26,6 +26,14 @@ public class User {
         return Password;
     }
 
+    public ArrayList<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(ArrayList<String> categories) {
+        this.categories = categories;
+    }
+
     public void setAdmin(String admin){
         Admin = admin;
     }
