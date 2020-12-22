@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class User {
     private   String Email , Password;
-    String Admin;
-    ArrayList<String> categories;
+    private String Admin;
+    private ArrayList<String> categories;
 
     public User(){}
 
@@ -17,9 +17,6 @@ public class User {
     public User(String E, String P){
         this.Email=E;
         this.Password=P;
-        this.Admin = "0";
-
-
     }
     public String getEmail() {
         return Email;

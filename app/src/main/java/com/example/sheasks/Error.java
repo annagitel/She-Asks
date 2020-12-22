@@ -5,6 +5,8 @@ public class Error {
     private String Page;
     private String Text;
     private long date;
+    private String author;
+    private String isResolved;
 
     public Error(String page, String text, long date) {
         Page = page;

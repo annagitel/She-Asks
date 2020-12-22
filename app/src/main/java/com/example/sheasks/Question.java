@@ -1,16 +1,23 @@
 package com.example.sheasks;
 
+import java.util.ArrayList;
+
 public class Question {
 
     private String Key;
     private String Category;
     private String Text;
     private long Date;
+    private ArrayList<Answer> answers;
+    private String isResolved;
+    private String author; //users email
 
     public Question(String key, String category, String text, long date) {
         Category = category;
         Text = text;
         Date = date;
+        isResolved = "0";
+        answers = new ArrayList<Answer>();
     }
 
     public Question() {
