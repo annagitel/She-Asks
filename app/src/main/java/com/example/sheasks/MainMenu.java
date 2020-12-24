@@ -26,20 +26,25 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void goToJava(View view) {
-        startActivity(new Intent(this, JavaCategory.class));
+        Intent intent = new Intent(this, CategoryActivity.class);
+        intent.putExtra("category", "Java");
+        startActivity(intent);
     }
 
     public void goToGit(View view) {
-        startActivity(new Intent(this, GitCategory.class));
-    }
+        Intent intent = new Intent(this, CategoryActivity.class);
+        intent.putExtra("category", "Git");
+        startActivity(intent);    }
 
     public void goToPython(View view) {
-        startActivity(new Intent(this, PythonCategory.class));
-    }
+        Intent intent = new Intent(this, CategoryActivity.class);
+        intent.putExtra("category", "Python");
+        startActivity(intent);    }
 
     public void goToWeb(View view) {
-        startActivity(new Intent(this, WebCategory.class));
-    }
+        Intent intent = new Intent(this, CategoryActivity.class);
+        intent.putExtra("category", "Web");
+        startActivity(intent);    }
 
     public void goToSettings(View view) {
         startActivity(new Intent(this, Settings.class));
@@ -47,5 +52,14 @@ public class MainMenu extends AppCompatActivity {
 
     public void goToErrors(View view) {
         startActivity(new Intent(this, AddErrorInAppActivity.class));
+    }
+
+
+    public void searchQuestionActivity(View view) {
+        startActivity(new Intent(this, SearchQuestionActivity.class));
+    }
+
+    public void addQuestionActivity(View view) {
+        startActivity(new Intent(this, AddQuestionActivity.class));
     }
 }

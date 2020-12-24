@@ -31,7 +31,7 @@ public class FirebaseHelper {
 
     }
 
-    public void readUser(final OnGetDataListener getdata){
+    public void readUser(final OnGetDataListener getdata) {
 
 
         mdatabase = FirebaseDatabase.getInstance();
@@ -64,6 +64,31 @@ public class FirebaseHelper {
         mdatabase = FirebaseDatabase.getInstance();
         mRef = mdatabase.getReference("Answers").child(questionKey);
         mRef.push().setValue(answer);
+    }
+
+    public void getQuestions(String category, OnGetQuestionsListener getdata) {
+        mdatabase = FirebaseDatabase.getInstance();
+        mRef = mdatabase.getReference("Questions").orderByChild("category").equalTo(category).getRef();
+        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ArrayList<Question> questions = new ArrayList<>();
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Question q = ds.getValue(Question.class);
+
+                    q.setKey(ds.getKey());
+                    questions.add(q);
+                }
+
+                getdata.onSuccess(questions);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void searchQuestion(String text, final OnGetQuestionsListener getdata) {
@@ -123,6 +148,7 @@ public class FirebaseHelper {
         mRef = mdatabase.getReference("Errors");
         mRef.push().setValue(error);
     }
+
 
     public interface OnGetDataListener {
         //this is for callbacks

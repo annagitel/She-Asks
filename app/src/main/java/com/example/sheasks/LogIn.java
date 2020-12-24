@@ -110,11 +110,11 @@ public class LogIn extends AppCompatActivity {
                 @Override
                 public void onSuccess(User usr) {
                     if(usr.getAdmin().equals("0") && !check_me) {
-                        startActivity(new Intent(LogIn.this, MainActivity.class));
+                        startActivity(new Intent(LogIn.this, MainMenu.class));
                         check_me = true;
                     }
                     else if(usr.getAdmin().equals("1") && !check_me) {
-                        startActivity(new Intent(LogIn.this, MainActivity.class));
+                        startActivity(new Intent(LogIn.this, MainMenu.class));
                         check_me = true;
                     }
                 }

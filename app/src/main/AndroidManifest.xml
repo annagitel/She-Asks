@@ -14,10 +14,7 @@
         <activity android:name=".SearchQuestionActivity" />
         <activity android:name=".AddErrorInAppActivity" />
         <activity android:name=".AddQuestionActivity" />
-        <activity android:name=".PythonCategory" />
-        <activity android:name=".WebCategory" />
-        <activity android:name=".GitCategory" />
-        <activity android:name=".JavaCategory" />
+        <activity android:name=".CategoryActivity" />
         <activity android:name=".MainMenu" />
         <activity android:name=".LogIn">
             <intent-filter>
@@ -26,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

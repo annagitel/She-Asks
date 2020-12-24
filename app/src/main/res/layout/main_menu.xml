@@ -21,8 +21,25 @@
         </TextView>
 
         <Button
+            android:id="@+id/ask"
             android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/green"
+            android:text="@string/ask"
+            android:onClick="addQuestionActivity" />
+        
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/green"
+            android:text="@string/search"
+            android:onClick="searchQuestionActivity"/>
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:backgroundTint="@color/green"
             android:text="Java"
             android:onClick="goToJava">
@@ -30,7 +47,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="wrap_content"
             app:backgroundTint="@color/green"
             android:text="GIT"
             android:onClick="goToGit">
@@ -38,7 +55,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="wrap_content"
             app:backgroundTint="@color/green"
             android:text="Python"
             android:onClick="goToPython">
@@ -46,7 +63,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="wrap_content"
             app:backgroundTint="@color/green"
             android:text="Web"
             android:onClick="goToWeb">
@@ -54,7 +71,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="wrap_content"
             app:backgroundTint="@color/green"
             android:text="Profile and Settings"
             android:onClick="goToSettings">
@@ -62,7 +79,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="wrap_content"
             app:backgroundTint="@color/green"
             android:id="@+id/reportProblemBtn"
             android:text="Report a problem"
