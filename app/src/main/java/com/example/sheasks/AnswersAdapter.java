@@ -47,7 +47,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.RVAdapte
     }
 
     public void addAnswer(Answer answer) {
-        this.answersList.add(answer);
+        this.answersList.add(0, answer);
         notifyDataSetChanged();
     }
 

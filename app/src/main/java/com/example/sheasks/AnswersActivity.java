@@ -29,10 +29,11 @@ public class AnswersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answers);
-        initViews();
-        initAnswersList();
 
         question = (Question) getIntent().getSerializableExtra("question");
+
+        initViews();
+        initAnswersList();
     }
 
     private void initViews() {
@@ -45,7 +46,7 @@ public class AnswersActivity extends AppCompatActivity {
         questionCategory.setText(new SimpleDateFormat("HH:mm MM/dd/yy").format(new Date(question.getDate())));
 
         answerText = findViewById(R.id.answerText);
-        answersRecyclerView = findViewById(R.id.questionsList);
+        answersRecyclerView = findViewById(R.id.answersList);
 
         answersAdapter = new AnswersAdapter(getApplicationContext());
         answersRecyclerView.setAdapter(answersAdapter);
