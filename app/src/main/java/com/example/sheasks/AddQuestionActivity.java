@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class AddQuestionActivity extends AppCompatActivity {
 
     Spinner categorySpinner;
@@ -42,7 +44,7 @@ public class AddQuestionActivity extends AppCompatActivity {
             question.setCategory(categorySpinner.getSelectedItem().toString());
             question.setText(questionText.getText().toString());
             question.setDate(System.currentTimeMillis());
-
+            question.setAuthor(FirebaseHelper.user.getEmail());
             new FirebaseHelper().addQuestion(question);
             Toast.makeText(this, "Question added to DB", Toast.LENGTH_LONG).show();
         }

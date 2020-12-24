@@ -18,10 +18,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, SearchQuestionActivity.class));
     }
 
-    public void addErrorInAppActivity(View view) {
-        startActivity(new Intent(this, AddErrorInAppActivity.class));
-    }
-
     public void addQuestionActivity(View view) {
         startActivity(new Intent(this, AddQuestionActivity.class));
     }

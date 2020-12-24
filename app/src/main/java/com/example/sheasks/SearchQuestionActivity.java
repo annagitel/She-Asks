@@ -27,7 +27,7 @@ public class SearchQuestionActivity extends AppCompatActivity {
         questionText = findViewById(R.id.questionText);
         questionsRecyclerView = findViewById(R.id.questionsList);
 
-        questionsAdapter = new QuestionsAdapter(getApplicationContext());
+        questionsAdapter = new QuestionsAdapter(this);
         questionsRecyclerView.setAdapter(questionsAdapter);
         questionsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

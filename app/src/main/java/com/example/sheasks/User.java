@@ -7,17 +7,19 @@ import java.util.Locale;
 import java.util.Map;
 
 public class User {
-    private   String Email , Password;
+    private String Email, Password;
     private String Admin;
     private ArrayList<String> categories;
 
-    public User(){}
-
-
-    public User(String E, String P){
-        this.Email=E;
-        this.Password=P;
+    public User() {
     }
+
+
+    public User(String E, String P) {
+        this.Email = E;
+        this.Password = P;
+    }
+
     public String getEmail() {
         return Email;
     }
@@ -34,7 +36,7 @@ public class User {
         this.categories = categories;
     }
 
-    public void setAdmin(String admin){
+    public void setAdmin(String admin) {
         Admin = admin;
     }
 
@@ -50,14 +52,13 @@ public class User {
         Password = password;
     }
 
-    public void addCategory(String category){
+    public void addCategory(String category) {
         categories.add(category);
     }
 
-    public void removeCategory(String category){
+    public void removeCategory(String category) {
         categories.remove(category);
     }
-
 
 
 }

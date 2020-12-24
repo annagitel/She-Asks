@@ -20,10 +20,7 @@ public class FirebaseHelper {
 
     private FirebaseDatabase mdatabase;
     private DatabaseReference mRef;
-    protected User user;
-
-    private static String u_email, u_pass;
-
+    public static User user;
 
     public void addUser(FirebaseUser user) { // adding a user to realtime database
         mdatabase = FirebaseDatabase.getInstance();
@@ -37,13 +34,13 @@ public class FirebaseHelper {
 
 
         mdatabase = FirebaseDatabase.getInstance();
-        mRef = mdatabase.getReference("Users");
+        mRef = mdatabase.getReference("Users").child(FirebaseAuth.getInstance().getUid());
         mRef.addValueEventListener(new ValueEventListener() {
 
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                user = dataSnapshot.child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid())).getValue(User.class);
+                user = dataSnapshot.getValue(User.class);
                 System.out.println(user.getEmail());
                 getdata.onSuccess(user);
             }
@@ -60,6 +57,12 @@ public class FirebaseHelper {
         mdatabase = FirebaseDatabase.getInstance();
         mRef = mdatabase.getReference("Questions");
         mRef.push().setValue(question);
+    }
+
+    public void addAnswer(Answer answer, String questionKey) { // adding an answer to realtime database
+        mdatabase = FirebaseDatabase.getInstance();
+        mRef = mdatabase.getReference("Answers").child(questionKey);
+        mRef.push().setValue(answer);
     }
 
     public void searchQuestion(String text, final OnGetQuestionsListener getdata) {
@@ -87,7 +90,30 @@ public class FirebaseHelper {
 
             }
         });
+    }
 
+    public void getQuestionAnswers(String questionKey, final OnGetAnswersListener getdata) {
+        mdatabase = FirebaseDatabase.getInstance();
+        mRef = mdatabase.getReference("Answers").child(questionKey);
+        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ArrayList<Answer> answers = new ArrayList<>();
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Answer a = ds.getValue(Answer.class);
+
+                    answers.add(a);
+                }
+
+                getdata.onSuccess(answers);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void addError(Error error) { // adding an error to realtime database
@@ -104,6 +130,11 @@ public class FirebaseHelper {
     public interface OnGetQuestionsListener {
         //this is for callbacks
         void onSuccess(ArrayList<Question> questions);
+    }
+
+    public interface OnGetAnswersListener {
+        //this is for callbacks
+        void onSuccess(ArrayList<Answer> answers);
     }
 
     public void userUpdatemap(String key, User user) {

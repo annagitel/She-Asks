@@ -64,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="71dp"
             app:backgroundTint="@color/green"
+            android:id="@+id/reportProblemBtn"
             android:text="Report a problem"
             android:onClick="goToErrors">
         </Button>

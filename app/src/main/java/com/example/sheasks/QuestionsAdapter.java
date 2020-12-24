@@ -1,14 +1,17 @@
 package com.example.sheasks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,7 +46,9 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.RVAd
             @Override
             public void onClick(View v) {
                 // TODO - go to question answers activity
-                Toast.makeText(context, "TODO - go to question answers activity", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, AnswersActivity.class);
+                intent.putExtra("question", questionsList.get(holder.getAdapterPosition()));
+                context.startActivity(intent);
             }
         });
     }

@@ -1,8 +1,9 @@
 package com.example.sheasks;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Question {
+public class Question implements Serializable {
 
     private String Key;
     private String Category;

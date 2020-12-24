@@ -2,12 +2,31 @@ package com.example.sheasks;
 
 public class Answer {
     private String data;
-    private String date;
+    private long date;
     private String author;
 
-    public Answer(String data, String date, String author) {
-        this.author = author;
+    public Answer() {
+    }
+
+    public Answer(String data, long date, String author) {
         this.data = data;
+        this.date = date;
+        this.author = author;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
         this.date = date;
     }
 
@@ -15,11 +34,7 @@ public class Answer {
         return author;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public String getDate() {
-        return date;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }

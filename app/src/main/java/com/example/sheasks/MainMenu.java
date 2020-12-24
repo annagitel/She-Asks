@@ -5,12 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainMenu extends AppCompatActivity {
+
+    Button reportProblemBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
+
+        reportProblemBtn = findViewById(R.id.reportProblemBtn);
+
+        if (FirebaseHelper.user.getAdmin().equals("1")) {
+            reportProblemBtn.setEnabled(true);
+        } else {
+            reportProblemBtn.setEnabled(false);
+        }
     }
 
     public void goToJava(View view) {
@@ -36,7 +48,4 @@ public class MainMenu extends AppCompatActivity {
     public void goToErrors(View view) {
         startActivity(new Intent(this, AddErrorInAppActivity.class));
     }
-
-
-
 }
