@@ -10,6 +10,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class FirebaseHelper {
 
     private FirebaseDatabase mdatabase;
     private DatabaseReference mRef;
+    private Query mQuery;
     public static User user;
 
     public void addUser(FirebaseUser user) { // adding a user to realtime database
@@ -68,8 +70,8 @@ public class FirebaseHelper {
 
     public void getQuestions(String category, OnGetQuestionsListener getdata) {
         mdatabase = FirebaseDatabase.getInstance();
-        mRef = mdatabase.getReference("Questions").orderByChild("category").equalTo(category).getRef();
-        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        mQuery = mdatabase.getReference("Questions").orderByChild("category").equalTo(category);
+        mQuery.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
